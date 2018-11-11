@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  gitit:
+    container_name: "gitit"
+    restart: always
+    build: .
+    volumes:
+      - ./gitit.conf:/gitit.conf
+      - data:/data
+    ports:
+      - 5001:5001
+
+volumes:
+  data:
