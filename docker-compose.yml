@@ -8,6 +8,13 @@ services:
     volumes:
       - ./gitit.conf:/gitit.conf
       - data:/data
+    environment:
+      # Fill the following environment variables out to activate auto push upon commit.
+      # To disable, comment out the GIT_REMOTE_URL variable definition below.
+      # Note that only HTTP(S) remotes are supported.
+      GIT_REMOTE_URL: "https://git.example.com/user/gitit-backup.git"
+      GIT_REMOTE_USERNAME: "UserName"
+      GIT_REMOTE_PASSWORD: "myPass"
     ports:
       - 5001:5001
 
